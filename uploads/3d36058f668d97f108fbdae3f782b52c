@@ -1,0 +1,31 @@
+sudo add-apt-repository -y ppa:ethereum/ethereum
+
+{
+"config": {
+"chainId": 4321,
+"homesteadBlock": 0,
+"eip150Block": 0,
+"eip155Block": 0,
+"eip158Block": 0,
+"byzantiumBlock": 0,
+"constantinopleBlock": 0
+},"alloc": {},
+"difficulty" : "0x20000",
+"gasLimit"   : "0x8880000"
+}
+
+geth --allow-insecure-unlock --http --http.port 8547 --http.addr 127.0.0.1 --http.corsdomain "*" --http.api "eth,net,web3,personal,miner" --datadir node1 --nodiscover --networkid 4321 --port 30303 console
+
+
+0x084ccd122a045fc05f1b0a8ea24af23ed3aac7d0
+0xc38bbb1261c96ff0686813531aae9051737da3a3
+0x0216dc606214e2fb1e68b03de1c21f3cc3569dad
+0x02a6e41ee2307bbfbd4f945e027c70c8c9896430
+0x4ca34da410db0e69dc5b48ea25ac2af892984aed
+
+
+miner.setEtherbase(eth.accounts[1])
+eth.getBalance(eth.accounts[0])
+personal.unlockAccount(eth.accounts[0])
+
+sc_addr=0x6d3894970e54Ddb08a003748d38df9F5559749AD
